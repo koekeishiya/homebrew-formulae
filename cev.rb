@@ -2,7 +2,7 @@ class Cev < Formula
   desc "Keycode grabber for OSX."
   homepage "https://github.com/koekeishiya/cev"
   url "https://github.com/koekeishiya/cev/releases/download/v0.0.1/cev-0.0.1.zip"
-  sha256 "db21e7a680d6ef6ca93ccd6dbfac1d8dfc2700799d8eb74fcdb2808c277b6a87"
+  sha256 "aea5d6650880d343d186ad4a990ab90adb02d262803e8258ea7fe446cb642be9"
 
   def install
     bin.install "cev"
