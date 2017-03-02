@@ -1,8 +1,8 @@
 class Kwm < Formula
   desc "Tiling window manager with focus follows mouse for OSX."
   homepage "https://koekeishiya.github.io/kwm/"
-  url "https://github.com/koekeishiya/kwm/releases/download/v4.0.4/Kwm-4.0.4.zip"
-  sha256 "399729aa4806b09daabc62a7e2eed7605d26c189ccbb911c123ef045db96e921"
+  url "https://github.com/koekeishiya/kwm/releases/download/v4.0.5/Kwm-4.0.5.zip"
+  sha256 "c10631504e2dabf91b78e5f78f01e1945f05d75d320a8fda23203204ff4cb908"
 
   def install
     bin.install "kwmc"
