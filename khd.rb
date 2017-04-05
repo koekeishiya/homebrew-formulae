@@ -1,8 +1,8 @@
 class Khd < Formula
   desc "Simple hotkey-daemon for OSX."
   homepage "https://github.com/koekeishiya/khd"
-  url "https://github.com/koekeishiya/khd/releases/download/v2.1.1/Khd-2.1.1.zip"
-  sha256 "35c1dbcd69961f152f27e328ca017cbc8a4ff4f325014406c73385eccffb89b0"
+  url "https://github.com/koekeishiya/khd/releases/download/v2.2.1/Khd-2.2.1.zip"
+  sha256 "0d049a1bab2e0c6566900c453cefed3861a078cc4c23180f3d3a7a70c001384d"
 
   def install
     bin.install "khd"
