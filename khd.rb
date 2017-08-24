@@ -35,12 +35,12 @@ class Khd < Formula
           <string>#{plist_name}</string>
           <key>ProgramArguments</key>
           <array>
-          <string>#{bin}/khd</string>
+            <string>#{opt_bin}/khd</string>
           </array>
           <key>EnvironmentVariables</key>
           <dict>
-              <key>PATH</key>
-              <string>$PATH:#{bin}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+            <key>PATH</key>
+            <string>#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
           </dict>
           <key>KeepAlive</key>
           <true/>
@@ -74,12 +74,12 @@ class Khd < Formula
           <string>#{plist_name}</string>
           <key>ProgramArguments</key>
           <array>
-          <string>#{bin}/khd</string>
+            <string>#{opt_bin}/khd</string>
           </array>
           <key>EnvironmentVariables</key>
           <dict>
-              <key>PATH</key>
-              <string>$PATH:#{bin}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+            <key>PATH</key>
+            <string>#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
           </dict>
           <key>KeepAlive</key>
           <true/>
