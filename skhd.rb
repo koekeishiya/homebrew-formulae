@@ -6,6 +6,7 @@ class Skhd < Formula
   head "https://github.com/koekeishiya/skhd.git"
 
   option "with-logging", "Redirect stdout and stderr to log files"
+
   def install
     (var/"log/skhd").mkpath
     system "make", "install"
@@ -15,7 +16,7 @@ class Skhd < Formula
 
   def caveats; <<-EOS.undent
     Copy the example configuration into your home directory:
-        cp #{opt_pkgshare}/examples/khdrcrc ~/.khdrc
+      cp #{opt_pkgshare}/examples/skhdrc ~/.skhdrc
 
     If the formula has been built with --with-logging, logs will be found in
       #{var}/log/skhd/skhd.[out|err].log
