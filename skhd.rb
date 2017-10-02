@@ -1,13 +1,14 @@
 class Skhd < Formula
   desc "Simple hotkey-daemon for macOS."
   homepage "https://github.com/koekeishiya/skhd"
-  url "https://github.com/koekeishiya/skhd/archive/v0.0.8.zip"
-  sha256 "e2b10bb89bec88203d3e62fd0f26f4c1c2e80ea14ba6b537b701404ad8c07082"
+  url "https://github.com/koekeishiya/skhd/archive/v0.0.10.zip"
+  sha256 "6cce23b60dfa2d84e9b915ae77608fc9875c319b634e45f56955d1c31ff1b1ef"
   head "https://github.com/koekeishiya/skhd.git"
 
   option "with-logging", "Redirect stdout and stderr to log files"
 
   def install
+    ENV.O3
     (var/"log/skhd").mkpath
     system "make", "install"
     bin.install "#{buildpath}/bin/skhd"
