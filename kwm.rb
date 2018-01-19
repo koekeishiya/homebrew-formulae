@@ -11,7 +11,7 @@ class Kwm < Formula
 
   plist_options :startup => false
 
-  def plist; <<-EOS.undent
+  def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
@@ -41,7 +41,7 @@ class Kwm < Formula
     EOS
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Copy the example config from #{prefix}/kwmrc into your home directory.
       mkdir -p ~/.kwm
       cp #{prefix}/kwmrc ~/.kwm/kwmrc

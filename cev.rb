@@ -8,7 +8,7 @@ class Cev < Formula
     bin.install "cev"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Secure Keyboard Entry must be disabled. Cev must be ran as root!
     EOS
   end
