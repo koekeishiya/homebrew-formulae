@@ -1,8 +1,8 @@
 class Skhd < Formula
   desc "Simple hotkey-daemon for macOS."
   homepage "https://github.com/koekeishiya/skhd"
-  url "https://github.com/koekeishiya/skhd/archive/v0.0.10.zip"
-  sha256 "6cce23b60dfa2d84e9b915ae77608fc9875c319b634e45f56955d1c31ff1b1ef"
+  url "https://github.com/koekeishiya/skhd/archive/v0.1.0.zip"
+  sha256 "2c08bced78ec7053cf98cd1c92285b30da7836b478dbe4c073aded64946ff954"
   head "https://github.com/koekeishiya/skhd.git"
 
   option "with-logging", "Redirect stdout and stderr to log files"
@@ -15,7 +15,7 @@ class Skhd < Formula
     (pkgshare/"examples").install "#{buildpath}/examples/skhdrc"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     Copy the example configuration into your home directory:
       cp #{opt_pkgshare}/examples/skhdrc ~/.skhdrc
 
@@ -27,7 +27,7 @@ class Skhd < Formula
   plist_options :manual => "skhd"
 
   if build.with? "logging"
-      def plist; <<-EOS.undent
+      def plist; <<~EOS
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
         <plist version="1.0">
@@ -56,7 +56,7 @@ class Skhd < Formula
         EOS
       end
   else
-      def plist; <<-EOS.undent
+      def plist; <<~EOS
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
         <plist version="1.0">
