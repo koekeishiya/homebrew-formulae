@@ -42,6 +42,8 @@ class Skhd < Formula
           <dict>
             <key>PATH</key>
             <string>#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+            <key>SHELL</key>
+            <string>/bin/sh</string>
           </dict>
           <key>RunAtLoad</key>
           <true/>
@@ -71,6 +73,8 @@ class Skhd < Formula
           <dict>
             <key>PATH</key>
             <string>#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+            <key>SHELL</key>
+            <string>/bin/sh</string>
           </dict>
           <key>RunAtLoad</key>
           <true/>
