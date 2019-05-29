@@ -5,7 +5,7 @@ class Yabai < Formula
   sha256 "fdeb9153b52cc73969e2fbb624d12db13adb5298f346e67f0bf950528f573605"
   head "https://github.com/koekeishiya/yabai.git"
 
-  depends_on :macos => :mojave
+  depends_on :macos => :high_sierra
 
   def install
     (var/"log/yabai").mkpath
