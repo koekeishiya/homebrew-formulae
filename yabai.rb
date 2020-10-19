@@ -58,6 +58,10 @@ class Yabai < Formula
       <string>#{var}/log/yabai/yabai.out.log</string>
       <key>StandardErrorPath</key>
       <string>#{var}/log/yabai/yabai.err.log</string>
+      <key>ProcessType</key>
+      <string>Interactive</string>
+      <key>Nice</key>
+      <integer>-20</integer>
     </dict>
     </plist>
     EOS

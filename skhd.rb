@@ -50,7 +50,11 @@ class Skhd < Formula
           <key>StandardOutPath</key>
           <string>#{var}/log/skhd/skhd.out.log</string>
           <key>StandardErrorPath</key>
-          <string>#{var}/log/skhd/skhd.err.log</string>
+          <string>#{var}/log/skhd/skhd.err.log</string>      
+          <key>ProcessType</key>
+          <string>Interactive</string>          
+          <key>Nice</key>
+          <integer>-20</integer>
         </dict>
         </plist>
         EOS
@@ -76,6 +80,10 @@ class Skhd < Formula
           <true/>
           <key>KeepAlive</key>
           <true/>
+          <key>ProcessType</key>
+          <string>Interactive</string>      
+          <key>Nice</key>
+          <integer>-20</integer>
         </dict>
         </plist>
         EOS
