@@ -8,7 +8,6 @@ class Skhd < Formula
   option "with-logging", "Redirect stdout and stderr to log files"
 
   def install
-    ENV.O3
     (var/"log/skhd").mkpath
     system "make", "install"
     bin.install "#{buildpath}/bin/skhd"
