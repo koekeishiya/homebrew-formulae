@@ -12,7 +12,7 @@ class Yabai < Formula
     man.mkpath
 
     if build.head?
-      system "make", "install"
+      system "make", "-j1", "install"
     end
 
     bin.install "#{buildpath}/bin/yabai"
