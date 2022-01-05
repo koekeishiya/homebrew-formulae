@@ -13,6 +13,7 @@ class Yabai < Formula
 
     if build.head?
       system "make", "-j1", "install"
+      system "codesign", "--force", "-s", "-", "#{buildpath}/bin/yabai"
     end
 
     bin.install "#{buildpath}/bin/yabai"

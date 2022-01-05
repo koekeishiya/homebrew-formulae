@@ -10,6 +10,7 @@ class Skhd < Formula
   def install
     (var/"log/skhd").mkpath
     system "make", "install"
+    system "codesign", "--force", "-s", "-", "#{buildpath}/bin/skhd"
     bin.install "#{buildpath}/bin/skhd"
     (pkgshare/"examples").install "#{buildpath}/examples/skhdrc"
   end
