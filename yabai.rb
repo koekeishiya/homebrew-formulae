@@ -6,6 +6,7 @@ class Yabai < Formula
   head "https://github.com/koekeishiya/yabai.git"
 
   depends_on :macos => :high_sierra
+  depends_on :xcode => "13.1"
 
   def install
     (var/"log/yabai").mkpath
