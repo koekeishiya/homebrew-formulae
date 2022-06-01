@@ -2,6 +2,8 @@ class Limelight < Formula
   desc "Standalone port of the yabai v2.4.3 border implementation"
   homepage "https://github.com/koekeishiya/limelight"
   head "https://github.com/koekeishiya/limelight.git"
+  version "0.0.1"
+  url "https://github.com/koekeishiya/limelight.git"
 
   depends_on macos: :high_sierra
 
