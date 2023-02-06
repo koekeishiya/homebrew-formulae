@@ -39,41 +39,15 @@ class Yabai < Formula
     EOS
   end
 
-  plist_options :manual => "yabai"
-
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-    <dict>
-      <key>Label</key>
-      <string>#{plist_name}</string>
-      <key>ProgramArguments</key>
-      <array>
-        <string>#{opt_bin}/yabai</string>
-      </array>
-      <key>EnvironmentVariables</key>
-      <dict>
-        <key>PATH</key>
-        <string>#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-      </dict>
-      <key>RunAtLoad</key>
-      <true/>
-      <key>KeepAlive</key>
-      <true/>
-      <key>ThrottleInterval</key>
-      <integer>30</integer>
-      <key>StandardOutPath</key>
-      <string>#{var}/log/yabai/yabai.out.log</string>
-      <key>StandardErrorPath</key>
-      <string>#{var}/log/yabai/yabai.err.log</string>
-      <key>ProcessType</key>
-      <string>Interactive</string>
-      <key>Nice</key>
-      <integer>-20</integer>
-    </dict>
-    </plist>
-    EOS
+  service do
+    run opt_bin/"yabai"
+    require_root true
+    environment_variables HOMEBREW_PREFIX/"bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    keep_alive true
+    interval 30
+    log_path var/"log/yabai/yabai.out.log"
+    err_log_path var"/log/yabai/yabai.err.log"
+    process_type :interactive
   end
 
   test do
