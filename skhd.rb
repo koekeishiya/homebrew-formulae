@@ -31,7 +31,7 @@ class Skhd < Formula
       keep_alive true
       interval 30
       log_path var/"log/skhd/skhd.out.log"
-      err_log_path var/"log/skhd/skhd.err.log"
+      error_log_path var/"log/skhd/skhd.err.log"
       process_type :interactive
     end
   else
