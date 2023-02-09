@@ -26,8 +26,8 @@ class Skhd < Formula
   if build.with? "logging"
     service do
       run opt_bin/"skhd"
-      require root true
-      environment_variables HOMEBREW_PREFIX/"bin:/usr/bin:/bin:/usr/sbin:/sbin"
+      require_root true
+      environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin"
       keep_alive true
       interval 30
       log_path var/"log/skhd/skhd.out.log"
@@ -37,8 +37,8 @@ class Skhd < Formula
   else
     service do
       run opt_bin/"skhd"
-      require root true
-      environment_variables HOMEBREW_PREFIX/"bin:/usr/bin:/bin:/usr/sbin:/sbin"
+      require_root true
+      environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin"
       keep_alive true
       interval 30
       process_type :interactive
