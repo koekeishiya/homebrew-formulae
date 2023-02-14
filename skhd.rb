@@ -40,7 +40,6 @@ class Skhd < Formula
       require_root true
       environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin"
       keep_alive true
-      interval 30
       process_type :interactive
     end
   end
