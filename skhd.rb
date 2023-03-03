@@ -5,8 +5,6 @@ class Skhd < Formula
   sha256 "5e3adcd0cb13b3f260ae72957603a1f587c34dd9abb8d990f036baa567bdaf23"
   head "https://github.com/koekeishiya/skhd.git"
 
-  option "with-logging", "Redirect stdout and stderr to log files"
-
   def install
     (var/"log/skhd").mkpath
     system "make", "install"
@@ -24,30 +22,17 @@ class Skhd < Formula
     EOS
   end
 
-  if build.with? "logging"
-    service do
-      run [
-        HOMEBREW_PREFIX/"bin/skhd",
-      ]
-      require_root false
-      working_dir HOMEBREW_PREFIX/"bin"
-      environment_variables PATH: HOMEBREW_PREFIX/"bin:/usr/bin:/bin:/usr/sbin:/sbin"
-      process_type :interactive
-      keep_alive true
-      log_path var/"log/skhd/skhd.out.log"
-      error_log_path var/"log/skhd/skhd.err.log"
-    end
-  else
-    service do
-      run [
-        HOMEBREW_PREFIX/"bin/skhd",
-      ]
-      require_root false
-      working_dir HOMEBREW_PREFIX/"bin"
-      environment_variables PATH: HOMEBREW_PREFIX/"bin:/usr/bin:/bin:/usr/sbin:/sbin"
-      process_type :interactive
-      keep_alive true
-    end
+  service do
+    run [
+      HOMEBREW_PREFIX/"bin/skhd",
+    ]
+    require_root false
+    working_dir HOMEBREW_PREFIX/"bin"
+    environment_variables PATH: HOMEBREW_PREFIX/"bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    process_type :interactive
+    keep_alive true
+    log_path var/"log/skhd/skhd.out.log"
+    error_log_path var/"log/skhd/skhd.err.log"
   end
 
   test do
