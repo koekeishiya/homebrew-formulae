@@ -16,7 +16,7 @@ class Skhd < Formula
     Copy the example configuration into your home directory:
       cp #{opt_pkgshare}/examples/skhdrc ~/.skhdrc
 
-    If the formula has been built with --with-logging, logs will be found in
+    Logs will be found in:
       #{var}/log/skhd/skhd.[out|err].log
     EOS
   end
