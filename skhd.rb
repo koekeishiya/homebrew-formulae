@@ -23,70 +23,27 @@ class Skhd < Formula
     EOS
   end
 
-  plist_options :manual => "skhd"
-
   if build.with? "logging"
-      def plist; <<~EOS
-        <?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-        <plist version="1.0">
-        <dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>#{opt_bin}/skhd</string>
-          </array>
-          <key>EnvironmentVariables</key>
-          <dict>
-            <key>PATH</key>
-            <string>#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-          </dict>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>KeepAlive</key>
-          <true/>
-          <key>StandardOutPath</key>
-          <string>#{var}/log/skhd/skhd.out.log</string>
-          <key>StandardErrorPath</key>
-          <string>#{var}/log/skhd/skhd.err.log</string>      
-          <key>ProcessType</key>
-          <string>Interactive</string>          
-          <key>Nice</key>
-          <integer>-20</integer>
-        </dict>
-        </plist>
-        EOS
-      end
+    
+    service do
+      run [opt_bin]/"skhd"
+      environment_variables PATH: std_service_path_env
+      keep_alive true
+      log_path var"/log/skhd/skhd.out.log"
+      error_log_path var"/log/skhd/skdh.error.log"
+      process_type :interactive
+      
+    end
+    
   else
-      def plist; <<~EOS
-        <?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-        <plist version="1.0">
-        <dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>#{opt_bin}/skhd</string>
-          </array>
-          <key>EnvironmentVariables</key>
-          <dict>
-            <key>PATH</key>
-            <string>#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-          </dict>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>KeepAlive</key>
-          <true/>
-          <key>ProcessType</key>
-          <string>Interactive</string>      
-          <key>Nice</key>
-          <integer>-20</integer>
-        </dict>
-        </plist>
-        EOS
-      end
+    
+    service do
+      run [opt_bin]/"skhd"
+      environment_variables PATH: std_service_path_env
+      keep_alive true
+      process_type :interactive
+    end
+    
   end
 
   test do
