@@ -40,10 +40,10 @@ class Yabai < Formula
   end
 
   service do
-    run [opt/bin]/"yabai"
+    run [opt/bin/"yabai"]
     keep_alive true
-    log_path var/"log/yabai/yabai.out.log"
-    error_log_path var/"log/yabai/yabai.err.log"
+    log_path [var/"log/yabai/yabai.out.log"]
+    error_log_path [var/"log/yabai/yabai.err.log"]
     process_type :interactive
     environment_variables PATH: std_service_path_env
   end
