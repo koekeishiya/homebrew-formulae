@@ -24,7 +24,7 @@ class Skhd < Formula
     EOS
   end
 
-  plist_options :manual => "skhd"
+  service.require_root :manual => "skhd"
 
   if build.with? "logging"
       def plist; <<~EOS

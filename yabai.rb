@@ -39,7 +39,7 @@ class Yabai < Formula
     EOS
   end
 
-  plist_options :manual => "yabai"
+  service.require_root :manual => "yabai"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
