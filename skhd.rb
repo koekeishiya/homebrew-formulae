@@ -1,13 +1,12 @@
 class Skhd < Formula
   desc "Simple hotkey-daemon for macOS."
   homepage "https://github.com/koekeishiya/skhd"
-  url "https://github.com/koekeishiya/skhd/archive/v0.3.7.zip"
-  sha256 "751fafb83a5447542ae6adc2ee8526380eea9069a172e2ae1c290e8af3153530"
+  url "https://github.com/koekeishiya/skhd/archive/v0.3.8.zip"
+  sha256 "2884a405bc735cda40abceb78c41e6028eab599021d06a127290b32a479524f1"
   head "https://github.com/koekeishiya/skhd.git"
 
   def install
     ENV.deparallelize
-    (var/"log/skhd").mkpath
     system "make", "-j1", "install"
     bin.install "#{buildpath}/bin/skhd"
     (pkgshare/"examples").install "#{buildpath}/examples/skhdrc"
