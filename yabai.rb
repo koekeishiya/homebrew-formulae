@@ -18,6 +18,11 @@ class Yabai < Formula
     (pkgshare/"examples").install "#{buildpath}/examples/yabairc"
     (pkgshare/"examples").install "#{buildpath}/examples/skhdrc"
     man1.install "#{buildpath}/doc/yabai.1"
+    puts "Would you like SA to be able to load automatically"
+    print "Type yes/no: "
+    if gets.chomp == "yes"
+      system "echo \"$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai)) --load-sa\" | sudo tee /private/etc/sudoers.d/yabai"
+    end
   end
 
   def caveats; <<~EOS
@@ -30,12 +35,6 @@ class Yabai < Formula
 
     When running as a launchd service logs will be found in:
       /tmp/yabai_<user>.[out|err].log
-
-    If you are using the scripting-addition; remember to update your sudoers file:
-      sudo visudo -f /private/etc/sudoers.d/yabai
-
-    Build the configuration row by running:
-      echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa"
 
     README: https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
     EOS
