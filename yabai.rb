@@ -1,8 +1,8 @@
 class Yabai < Formula
   desc "A tiling window manager for macOS based on binary space partitioning."
   homepage "https://github.com/koekeishiya/yabai"
-  url "https://github.com/koekeishiya/yabai/releases/download/v6.0.1/yabai-v6.0.1.tar.gz"
-  sha256 "246be40e09728a837f3d46d51b338fb32be56b7a2951e5256e78d75ef4f78883"
+  url "https://github.com/koekeishiya/yabai/releases/download/v6.0.2/yabai-v6.0.2.tar.gz"
+  sha256 "5e52fd83768c07b59c959eaf3810b4a09c83888218324c2a529ff6bc13d788fc"
   head "https://github.com/koekeishiya/yabai.git"
 
   depends_on :macos => :big_sur
