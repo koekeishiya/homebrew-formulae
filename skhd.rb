@@ -8,6 +8,7 @@ class Skhd < Formula
   def install
     ENV.deparallelize
     system "make", "-j1", "install"
+    system "codesign", "-fs", "-", "#{buildpath}/bin/skhd"
     bin.install "#{buildpath}/bin/skhd"
     (pkgshare/"examples").install "#{buildpath}/examples/skhdrc"
   end
