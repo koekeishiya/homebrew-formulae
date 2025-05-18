@@ -25,6 +25,15 @@ class Skhd < Formula
     EOS
   end
 
+  service do
+    run [opt_bin/"skhd"]
+    run_type :immediate
+    keep_alive successful_exit: false, crashed: true
+    environment_variables PATH: std_service_path_env
+    error_log_path var/"log/skhd.log"
+    log_path var/"log/skhd.log"
+  end
+
   test do
     assert_match "skhd-v#{version}", shell_output("#{bin}/skhd --version")
   end
